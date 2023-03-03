@@ -13,10 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Auth::routes();
+// Route::get('/games', function () {
+//     return view('games');
+// })->middleware(['auth', 'verified'])->name('games');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// require __DIR__.'/auth.php';
+
+
+// Route::get('/home', function () {
+//     return view('home');
+// });
+
+
+// Route::resource("/games", GameController::class)->middleware(['auth']);
+
+// Route::get('/index', [GameController::class, "index"])->middleware(["auth"]);
