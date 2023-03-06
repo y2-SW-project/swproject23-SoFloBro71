@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class GameController extends Controller
+class RetroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class GameController extends Controller
     public function index()
     {
         //Fetch motes in order of when they were last updated - latest updated returned first
-        $games = Game::where('user_id', Auth::id())->latest('updated_at')->paginate();
-        // dd($games);
-        return view('games.index')->with('games', $games);
+        $Retros = Game::where('user_id', Auth::id())->latest('updated_at')->paginate();
+        // dd($Retros);
+        return view('games.index')->with('games', $Retros);
     }
 
     /**
@@ -49,11 +49,11 @@ class GameController extends Controller
             'game_image' => 'file|image',
         ]);
 
-        $game_image = $request->file('game_image');
-        $extension = $game_image->getClientOriginalExtension();
+        $Retro_image = $request->file('game_image');
+        $extension = $Retro_image->getClientOriginalExtension();
         $filename = date('Y-m-d-His') . '_' . $request->input('title') . '.' . $extension;
 
-        $path = $game_image->storeAs('public/images', $filename);
+        $path = $Retro_image->storeAs('public/images', $filename);
 
         Game::create([
             // Ensure you have the use statement for 
@@ -77,17 +77,17 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show(Game $Retro)
     {
         // /Game | findOrFail() firstOrFail() return a 404 not found view if not found.
         // This is OK for web application development, but not for API development as
         // API's return JSON not Views.
 
-        if ($game->user_id != Auth::id()) {
+        if ($Retro->user_id != Auth::id()) {
             return abort(403);
         }
 
-        return view('games.show')->with('game', $game);
+        return view('games.show')->with('game', $Retro);
     }
 
     /**
@@ -96,13 +96,13 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Game $game)
+    public function edit(Game $Retro)
     {
-        if ($game->user_id != Auth::id()) {
+        if ($Retro->user_id != Auth::id()) {
             return abort(403);
         }
 
-        return view('games.edit')->with('game', $game);
+        return view('games.edit')->with('game', $Retro);
     }
 
     /**
@@ -112,10 +112,10 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Game $game)
+    public function update(Request $request, Game $Retro)
     {
 
-        if ($game->user_id != Auth::id()) {
+        if ($Retro->user_id != Auth::id()) {
             return abort(403);
         }
 
@@ -128,14 +128,14 @@ class GameController extends Controller
         ]);
 
         // dd($request);
-        $game_image = $request->file('game_image');
-        $extension = $game_image->getClientOriginalExtension();
+        $Retro_image = $request->file('game_image');
+        $extension = $Retro_image->getClientOriginalExtension();
         $filename = date('Y-m-d-His') . '_' . $request->input('title') . '.' . $extension;
 
 
-        $path = $game_image->storeAs('public/images', $filename);
+        $path = $Retro_image->storeAs('public/images', $filename);
 
-        $game->update([
+        $Retro->update([
 
             'title' => $request->title,
             'description' => $request->description,
@@ -146,7 +146,7 @@ class GameController extends Controller
 
 
 
-        return to_route('games.show', $game)->with('success', 'Game Info updated successfully');
+        return to_route('games.show', $Retro)->with('success', 'Game Info updated successfully');
     }
 
     /**
@@ -155,14 +155,14 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Game $game)
+    public function destroy(Game $Retro)
     {
 
-        if ($game->user_id != Auth::id()) {
+        if ($Retro->user_id != Auth::id()) {
             return abort(403);
         }
 
-        $game->delete();
+        $Retro->delete();
 
         return to_route('games.index')->with('success', 'Game Info deleted successfully');
     }

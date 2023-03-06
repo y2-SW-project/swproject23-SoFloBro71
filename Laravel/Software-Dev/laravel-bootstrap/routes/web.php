@@ -13,22 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/games', function () {
-//     return view('games');
-// })->middleware(['auth', 'verified'])->name('games');
+Route::get('/games', function () {
+    return view('games');
+})->middleware(['auth', 'verified'])->name('games');
 
-// require __DIR__.'/auth.php';
-
-
-// Route::get('/home', function () {
-//     return view('home');
-// });
+require __DIR__.'/auth.php';
 
 
-// Route::resource("/games", GameController::class)->middleware(['auth']);
+Route::get('/home', function () {
+    return view('home');
+});
 
-// Route::get('/index', [GameController::class, "index"])->middleware(["auth"]);
+
+Route::resource("/games", RetroController::class)->middleware(['auth']);
+
+Route::get('/index', [RetroController::class, "index"])->middleware(["auth"]);
