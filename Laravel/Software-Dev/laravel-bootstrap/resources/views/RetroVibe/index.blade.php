@@ -23,7 +23,7 @@
             </x-alert-success>  --}}
             
             <a href="{{ route('RetroVibe.create') }}" class="btn-link btn-lg mb-2">+ New Game</a>
-            @forelse ($games as $Retro)
+            @forelse ($Retros as $Retro)
                 <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg flex">
                     <div>
                         <h2 class="text">

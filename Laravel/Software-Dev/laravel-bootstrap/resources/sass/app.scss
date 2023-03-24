@@ -6,3 +6,32 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+@import "../node_modules/bootstrap/scss/functions";
+
+// GLOBALS
+$enable-rounded: false;
+// $enable-shadows:true;
+
+// THEME COLOURS
+$primary: rgb(103, 44, 220);
+$secondary: rgb(5, 5, 85);
+$dark:  rgb(55, 131, 0);
+$light: rgb(175, 202, 255);
+
+// IMPORT VARIABLES + MIXINS
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// CUSTOM COLOURS
+$custom-colours: (
+    "primary-light": rgb(252, 178, 191),
+    "secondary-light": rgb(175, 254, 175),
+);
+
+// MERGE OUR COLOURS WITH THE THEME
+$theme-colours: map-merge($theme-colours, $custom-colours);
+
+// IMPORT BOOTSTRAP
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
