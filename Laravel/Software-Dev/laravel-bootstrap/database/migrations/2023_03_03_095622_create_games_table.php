@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('user_id')->constrained();
-            $table->string('title');
+            $table->foreignId('edition_id');
+            $table->foreignId('creator_id');
+            $table->string('game_title');
             $table->longText('description');
             $table->string('category');
-            $table->string('creator');
+            $table->string('platform');
+            $table->date('release_date');
             $table->string('game_image');
             $table->timestamps();
         });

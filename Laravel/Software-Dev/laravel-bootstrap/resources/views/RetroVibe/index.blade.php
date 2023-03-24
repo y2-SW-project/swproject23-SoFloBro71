@@ -6,24 +6,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 
-<x-app-layout>
+{{-- <x-app-layout>
     <x-slot name="header">
         <h2 class="font">
             {{ __('RetroVibes') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
+{{-- 
             <x-alert-success>
 
                 {{session('success')}}
 
-            </x-alert-success> 
+            </x-alert-success>  --}}
             
-            <a href="{{ route('RetroVibes.create') }}" class="btn-link btn-lg mb-2">+ New Game</a>
-            @forelse ($RetroVibes as $Retro)
+            <a href="{{ route('RetroVibe.create') }}" class="btn-link btn-lg mb-2">+ New Game</a>
+            @forelse ($games as $Retro)
                 <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg flex">
                     <div>
                         <h2 class="text">
@@ -42,7 +42,7 @@
             @empty
             <p>You have no Games yet.</p>
             @endforelse
-            {{$RetroVibes->links()}}
+            {{$games->links()}}
         </div>
     </div>
-</x-app-layout>
+{{-- </x-app-layout> --}}

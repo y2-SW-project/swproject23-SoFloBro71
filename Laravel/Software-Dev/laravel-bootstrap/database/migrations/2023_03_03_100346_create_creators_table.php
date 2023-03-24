@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('social_media');
-            $table->string('game_image');
+            $table->string('creator_image');
             $table->timestamps();
         });
     }

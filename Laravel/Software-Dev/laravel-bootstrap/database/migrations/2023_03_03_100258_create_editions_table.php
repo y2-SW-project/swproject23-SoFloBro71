@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->string('title');
+            $table->string('edition_title');
             $table->longText('description');
-            $table->string('game_id');
-            $table->string('game_image');
+            $table->integer('stock');
+            $table->decimal('price');
+            $table->string('edition_image');
             $table->timestamps();
         });
     }

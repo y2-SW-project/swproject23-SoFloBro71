@@ -17,9 +17,10 @@ class RetroController extends Controller
     public function index()
     {
         //Fetch motes in order of when they were last updated - latest updated returned first
-        $Retros = Game::where('user_id', Auth::id())->latest('updated_at')->paginate();
+        // $Retros = Game::where('user_id', Auth::id())->latest('updated_at')->paginate();
+        $Retros = Game::paginate(5);
         // dd($Retros);
-        return view('games.index')->with('games', $Retros);
+        return view('RetroVibe.index')->with('games', $Retros);
     }
 
     /**

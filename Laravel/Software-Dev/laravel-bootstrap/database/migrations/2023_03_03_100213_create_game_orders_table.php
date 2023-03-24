@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('game_orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id');
+            $table->foreignId('basket_id');
             $table->decimal('shipping_cost');
-            $table->decimal('order_cost');
+            $table->decimal('total_cost');
             $table->foreignId('game_id');
             $table->timestamp('payed_at')->useCurrent();
         });
