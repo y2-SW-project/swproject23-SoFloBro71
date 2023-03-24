@@ -30,7 +30,7 @@ class RetroController extends Controller
      */
     public function create()
     {
-        return view('games.create');
+        return view('RetroVibe.create');
     }
 
     /**
@@ -61,11 +61,15 @@ class RetroController extends Controller
             // Illuminate\Support\Str at the top of this file.
             'uuid' => Str::uuid(),
             'user_id' => Auth::id(),
-            'title' => $request->title,
+            'creator_id' => Auth::id(),
+            'edition_id' => Auth::id(),
+            'game_title' => $request->title,
             'description' => $request->description,
             'game_image' => $filename,
             'creator' => $request->developer,
-            'category' => $request->category
+            'category' => $request->category,
+            'platform' => $request->platform,
+            'release_date' => $request->release_date
 
         ]);
 
@@ -88,7 +92,7 @@ class RetroController extends Controller
             return abort(403);
         }
 
-        return view('games.show')->with('game', $Retro);
+        return view('RetroVibe.show')->with('game', $Retro);
     }
 
     /**
@@ -103,7 +107,7 @@ class RetroController extends Controller
             return abort(403);
         }
 
-        return view('games.edit')->with('game', $Retro);
+        return view('RetroVibe.edit')->with('game', $Retro);
     }
 
     /**
@@ -124,7 +128,9 @@ class RetroController extends Controller
             'title' => 'required',
             'description' => 'required|max:500',
             'category' => 'required',
-            'creator' => 'required',
+            'release_date' => 'required',
+            'platform' => 'required',
+            'developer' => 'required',
             'game_image' => 'file|image'
         ]);
 
@@ -142,12 +148,14 @@ class RetroController extends Controller
             'description' => $request->description,
             'category' => $request->category,
             'game_image' => $filename,
-            'creator' => $request->developer
+            'developer' => $request->developer,
+            'platform' => $request->platfrom,
+            'release_date' => $request->release_date
         ]);
 
 
 
-        return to_route('games.show', $Retro)->with('success', 'Game Info updated successfully');
+        return to_route('RetroVibe.show', $Retro)->with('success', 'Game Info updated successfully');
     }
 
     /**
@@ -165,6 +173,6 @@ class RetroController extends Controller
 
         $Retro->delete();
 
-        return to_route('games.index')->with('success', 'Game Info deleted successfully');
+        return to_route('RetroVibe.index')->with('success', 'Game Info deleted successfully');
     }
 }

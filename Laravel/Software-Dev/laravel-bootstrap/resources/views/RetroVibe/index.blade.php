@@ -42,7 +42,7 @@
             @empty
             <p>You have no Games yet.</p>
             @endforelse
-            {{$games->links()}}
+            {{$Retro->links()}}
         </div>
     </div>
 {{-- </x-app-layout> --}}
