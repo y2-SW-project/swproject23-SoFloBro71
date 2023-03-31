@@ -20,7 +20,7 @@ class RetroController extends Controller
         // $Retros = Game::where('user_id', Auth::id())->latest('updated_at')->paginate();
         $Retros = Game::paginate(5);
         // dd($Retros);
-        return view('RetroVibe.index')->with('games', $Retros);
+        return view('RetroVibe.index')->with('Retros', $Retros);
     }
 
     /**

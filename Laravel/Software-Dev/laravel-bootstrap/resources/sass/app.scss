@@ -2,12 +2,14 @@
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
 // Variables
-@import 'variables';
+// @import 'variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-@import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/functions";
+
+@import '../../node_modules/bootstrap/scss/functions';
 
 // GLOBALS
 $enable-rounded: false;
@@ -31,7 +33,7 @@ $custom-colours: (
 );
 
 // MERGE OUR COLOURS WITH THE THEME
-$theme-colours: map-merge($theme-colours, $custom-colours);
+// $theme-colours: map-merge($theme-colours, $custom-colours);
 
 // IMPORT BOOTSTRAP
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

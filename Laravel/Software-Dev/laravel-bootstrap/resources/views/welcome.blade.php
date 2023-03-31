@@ -16,7 +16,7 @@
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../css/app.css" />
 
 <!-- START OF HEADER / NAV -->
 
@@ -119,19 +119,19 @@
         <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active ">
-                    <img src="resources/images/daftpunk_ad.png" class="d-block w-100" alt="...">
+                    <img src="images/Cult_ad.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-flex justify-content-md-top">
                         <a href="melanie-martinez.html" class="btn btn-lg bg-primary text-light third-font">Buy Now</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/daftpunk_ad.png" class="d-block w-100" alt="...">
+                    <img src="images/Trek_ad.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-flex justify-content-md-top">
                         <a href="daft-punk.html" class="btn btn-lg bg-primary text-light third-font">Buy Now</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/dua_ad.png" class="d-block w-100" alt="...">
+                    <img src="images/Card-Shark_ad.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-md-flex justify-content-md-top">
                         <a href="dua-lipa.html" class="btn btn-lg bg-primary text-light third-font">Buy Now</a>
                     </div>
@@ -216,7 +216,7 @@
             </div>
             <div class="col">
                 <div class="card shadow-lg">
-                    <a href="daft-punk.html"><img src="images/dfconcert.png" class="card-img-top zoom" alt="..."></a>
+                    <a href="daft-punk.html"><img src="{{URL::asset('/images/dfconcert.png')}}" class="card-img-top zoom" alt="..."></a>
                 <div class="card-body">
                     <h3 class="card-title"><a href="#" class="text-decoration-none text-dark">Daft Punk</a></h3>
                     <h5 class="text-primary text-opacity-75">Alive 2007</h5>
@@ -327,179 +327,43 @@
 
 <!-- START OF TICKET OFFER -->
 
-<div id="carouselExample" class="carousel slide padding_1">
-    <div class="carousel-inner">
-
-<!-- LAST MINUTE GROUP OFFERS -->
-
-        <div class="carousel-item active ">
-            <img src="images/second-scroll.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-flex justify-content-md-top padding-left">
-
-                <!-- START OF OFFER CARDS -->
-            <div class="d-flex justify-content-end flex-column ">
-                <div class="card mb-3 " style="width: 457px; height: 107px; border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex ">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end" >
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">Daft Punk - Alive 2007</a></h5>
-                            <p class="card-text">Get Lucky Offer - Group of 4 Tickets for €220 with Special Access Pass </p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3 " style="width: 457px; height: 107px; border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex">
-                        <img src="images/Melanie_Martinez_-_K-12.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end">
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">Melanie Martinez - After School</a></h5>
-                            <p class="card-text">Two is better than One Special -  2 Tickets for €65</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3" style="width: 457px; height: 107px;border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex">
-                        <img src="images/geekmart.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end">
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">GeekMart - 2023</a></h5>
-                            <p class="card-text">Toad Troopers - Group of 6 Tickets for €150 (Get while offer lasts!)</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>   
-    <!--END OF OFFER CARDS  -->
-            </div>
-        </div>
-
-<!-- NEW EVENTS ADDED SLIDE -->
-
-        <div class="carousel-item active ">
-            <img src="images/second-scroll-2.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-flex justify-content-md-top padding-left">
-
-                <!-- START OF OFFER CARDS -->
-            <div class="d-flex justify-content-end flex-column ">
-                <div class="card mb-3 " style="width: 457px; height: 107px; border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex ">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end" >
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">Daft Punk - Alive 2007</a></h5>
-                            <p class="card-text">Get Lucky Offer - Group of 4 Tickets for €220 with Special Access Pass </p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3 " style="width: 457px; height: 107px; border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end">
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">Melanie Martinez - After School</a></h5>
-                            <p class="card-text">Two is better than One Special -  2 Tickets for €65</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3" style="width: 457px; height: 107px;border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end">
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">GeekMart - 2023</a></h5>
-                            <p class="card-text">Toad Troopers - Group of 6 Tickets for €150 (Get while offer lasts!)</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>   
-    <!--END OF OFFER CARDS  -->
-            </div>
-        </div>
-
-
-<!-- LAST MINUTE TICKET OFFERS SLIDE -->
-        <div class="carousel-item active ">
-            <img src="images/second-scroll-3.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-flex justify-content-md-top padding-left">
-
-                <!-- START OF OFFER CARDS -->
-            <div class="d-flex justify-content-end flex-column ">
-                <div class="card mb-3 " style="width: 457px; height: 107px; border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex ">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end" >
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">Daft Punk - Alive 2007</a></h5>
-                            <p class="card-text">Get Lucky Offer - Group of 4 Tickets for €220 with Special Access Pass </p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3 " style="width: 457px; height: 107px; border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end">
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">Melanie Martinez - After School</a></h5>
-                            <p class="card-text">Two is better than One Special -  2 Tickets for €65</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3" style="width: 457px; height: 107px;border-style: none;">
-                    <div class="row g-0 ">
-                        <div class="col-md-4 d-flex">
-                        <img src="images/dfconcert.png" class="img-fluid rounded-start zoom" alt="..." style="width: 457px; height: 107px;">
-                    </div>
-                    <div class="col-md-8 bg-secondary rounded-end">
-                        <div class="card-body third-italic rounded-end" style=" height: 56px;">
-                            <h5><a href="#" class="card-title text-light">GeekMart - 2023</a></h5>
-                            <p class="card-text">Toad Troopers - Group of 6 Tickets for €150 (Get while offer lasts!)</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>   
-    <!--END OF OFFER CARDS  -->
-            </div>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card">
+        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+    </div>
+    <div class="col">
+        <div class="card">
+        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        </div>
+    </div>
 </div>
 
 <!-- FOOTER -->

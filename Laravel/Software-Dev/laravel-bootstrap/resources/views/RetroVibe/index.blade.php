@@ -1,10 +1,10 @@
-
+{{-- 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"> --}}
 
 {{-- <x-app-layout>
     <x-slot name="header">
@@ -12,7 +12,9 @@
             {{ __('RetroVibes') }}
         </h2>
     </x-slot> --}}
+    @extends('layouts.app')
 
+    @section('content')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 {{-- 
@@ -42,7 +44,8 @@
             @empty
             <p>You have no Games yet.</p>
             @endforelse
-            {{$Retro->links()}}
+            {{$Retros->links()}}
         </div>
     </div>
+    @endsection
 {{-- </x-app-layout> --}}
