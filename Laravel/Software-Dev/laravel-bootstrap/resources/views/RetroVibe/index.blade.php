@@ -77,7 +77,7 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         
                 <h1 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <a href="index.html" class="nav-link px-2 link-light ">RetroVibes</a>
+                    <a href="{{ url('/index') }}" class="nav-link px-2 link-light ">RetroVibes</a>
                 </h1>
         
                                 <!-- PROFILE PIC -->
@@ -347,7 +347,6 @@
         <div class="card">
         <img src="images/purple.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
         </div>
     </div>
     </div>

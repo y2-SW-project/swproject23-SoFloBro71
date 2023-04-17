@@ -9,8 +9,8 @@
                     @csrf
                     <x-text-input
                         type="text"
-                        name="title"
-                        field="title"
+                        name="game_title"
+                        field="game_title"
                         placeholder="Title"
                         class="form-control"
                         autocomplete="off"
@@ -45,6 +45,17 @@
                         <p class="error">{{$errors->first('description')}}</p>
                     @endif
 
+                    <input
+                    type = "date"
+                    name="release_date"
+                    field="release_date"
+                    class="w-full mt-5"
+                    {{@old('release_date')}}>
+
+                    @if ($errors->has('release_date'))
+                    <p class="error">{{$errors->first('release_date')}}</p>
+                @endif
+
                         <select name="category" id="category" field="category">
                             <option value="">Select Genre</option>
                             <option value="horror">Horror</option>
@@ -53,6 +64,13 @@
                             <option value="evg">Episodic Video Game</option>
                             <option value="puzzle">Puzzle</option>
                             <option value="rgp">RPG</option>
+                        </select>
+
+                        <select name="edition_id" id="edition_id" field="edition_id">
+                            <option value="">Select Edition</option>
+                            <option value="Collectors">Collectors</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Deluxe">Deluxe</option>
                         </select>
 
                         <select name="platform" id="platform" field="platform">

@@ -62,7 +62,7 @@ class RetroController extends Controller
             // Illuminate\Support\Str at the top of this file.
             'uuid' => Str::uuid(),
             'creator_id' => Auth::id(),
-            'edition_id' => Auth::id(),
+            'edition_id' => $request->input('edition_id'),
             'game_title' => $request->input('game_title'),
             'description' => $request->input('description'),
             'game_image' => $filename,
