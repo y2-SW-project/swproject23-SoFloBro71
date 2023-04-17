@@ -14,31 +14,30 @@
                     @csrf
                     <x-text-input
                     type="text"
-                    name="title"
-                    field="title"
+                    name="game_title"
+                    field="game_title"
                     placeholder="Title"
                     class="w-full"
                     autocomplete="off"
                     {{-- :value="@old('title')" --}}
-                    value="{{ old('title', $Retro->title) }}"></x-text-input>
+                    value="{{ old('game_title', $Retro->game_title) }}"></x-text-input>
 
-                    @if ($errors->has('title'))
-                        <p class="error">{{$errors->first('title')}}</p>
+                    @if ($errors->has('game_title'))
+                        <p class="error">{{$errors->first('game_title')}}</p>
                     @endif
 
                     <x-text-input
                     type="text"
-                    name="developer"
-                    field="developer"
-                    placeholder="Developer"
+                    name="creator"
+                    field="creator"
+                    placeholder="Creator"
                     class="w-full"
                     autocomplete="off"
-                    {{-- :value="@old('developer')" --}}
-                    value="{{ old('developer', $Retro->developer) }}"
-                    ></x-text-input>
+                    {{-- :value="@old('title')" --}}
+                    value="{{ old('creator', $Retro->creator) }}"></x-text-input>
 
-                    @if ($errors->has('developer'))
-                        <p class="error">{{$errors->first('developer')}}</p>
+                    @if ($errors->has('creator'))
+                        <p class="error">{{$errors->first('creator')}}</p>
                     @endif
 
                     <textarea
@@ -66,6 +65,21 @@
 
                         @if ($errors->has('category'))
                         <p class="error">{{$errors->first('category')}}</p>
+                    @endif
+
+                    <select name="platform" id="platform" field="platform">
+                        {{-- <option value="test">test</option> --}}
+                        <option value="">{{($Retro->platform === '') ? 'Select Platform' : ''}}</option>
+                        <option value="PS4" {{($Retro->platform === 'PS4') ? 'Selected' : ''}}>PS4</option>
+                        <option value="PS5" {{($Retro->platform === 'PS5') ? 'Selected' : ''}}>PS5</option>
+                        <option value="PC" {{($Retro->platform === 'PC') ? 'Selected' : ''}}>PC</option>
+                        <option value="Switch" {{($Retro->platform === 'Switch') ? 'Selected' : ''}}>Switch</option>
+                        <option value="Xbox" {{($Retro->platform === 'Xbox') ? 'Selected' : ''}}>Xbox</option>
+                        <option value="rgp" {{($Retro->platform === 'rpg') ? 'Selected' : ''}}>RPG</option>
+                        </select>
+
+                        @if ($errors->has('platform'))
+                        <p class="error">{{$errors->first('platform')}}</p>
                     @endif
 
                     <input

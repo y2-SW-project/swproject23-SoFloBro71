@@ -42,17 +42,18 @@ class RetroController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'game_title' => 'required',
             'description' => 'required|max:500',
             'category' => 'required',
-            'creator' => 'required',
-            // 'game_image' => 'file|image|dimensions:width300,height=400',
-            'game_image' => 'file|image',
+            'release_date' => 'required',
+            'platform' => 'required',
+            'developer' => 'required',
+            'game_image' => 'file|image'
         ]);
 
         $Retro_image = $request->file('game_image');
         $extension = $Retro_image->getClientOriginalExtension();
-        $filename = date('Y-m-d-His') . '_' . $request->input('title') . '.' . $extension;
+        $filename = date('Y-m-d-His') . '_' . $request->input('game_title') . '.' . $extension;
 
         $path = $Retro_image->storeAs('public/images', $filename);
 
@@ -60,20 +61,19 @@ class RetroController extends Controller
             // Ensure you have the use statement for 
             // Illuminate\Support\Str at the top of this file.
             'uuid' => Str::uuid(),
-            'user_id' => Auth::id(),
             'creator_id' => Auth::id(),
             'edition_id' => Auth::id(),
-            'game_title' => $request->title,
-            'description' => $request->description,
+            'game_title' => $request->input('game_title'),
+            'description' => $request->input('description'),
             'game_image' => $filename,
-            'creator' => $request->developer,
-            'category' => $request->category,
-            'platform' => $request->platform,
+            'creator' => $request->input('creator'),
+            'category' => $request->input('category'),
+            'platform' => $request->input('platform'),
             'release_date' => $request->release_date
 
         ]);
 
-        return to_route('games.index');
+        return to_route('RetroVibe.index');
     }
 
     /**
@@ -125,7 +125,7 @@ class RetroController extends Controller
         }
 
         $request->validate([
-            'title' => 'required',
+            'game_title' => 'required',
             'description' => 'required|max:500',
             'category' => 'required',
             'release_date' => 'required',
@@ -137,14 +137,14 @@ class RetroController extends Controller
         // dd($request);
         $Retro_image = $request->file('game_image');
         $extension = $Retro_image->getClientOriginalExtension();
-        $filename = date('Y-m-d-His') . '_' . $request->input('title') . '.' . $extension;
+        $filename = date('Y-m-d-His') . '_' . $request->input('game_title') . '.' . $extension;
 
 
         $path = $Retro_image->storeAs('public/images', $filename);
 
         $Retro->update([
 
-            'title' => $request->title,
+            'game_title' => $request->game_title,
             'description' => $request->description,
             'category' => $request->category,
             'game_image' => $filename,

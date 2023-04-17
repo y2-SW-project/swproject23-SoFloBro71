@@ -14,24 +14,24 @@
                         placeholder="Title"
                         class="form-control"
                         autocomplete="off"
-                        :value="@old('title')"></x-text-input>
+                        :value="@old('game_title')"></x-text-input>
 
-                        @if ($errors->has('title'))
-                        <p class="error">{{$errors->first('title')}}</p>
+                        @if ($errors->has('game_title'))
+                        <p class="error">{{$errors->first('game_title')}}</p>
                     @endif
 
-                        <x-text-input
-                        type="text"
-                        name="developer"
-                        field="developer"
-                        placeholder="Developer"
-                        class="form-control mt-5"
-                        autocomplete="off"
-                        :value="@old('developer')"></x-text-input>
+                    <x-text-input
+                    type="text"
+                    name="creator"
+                    field="creator"
+                    placeholder="Creator"
+                    class="form-control"
+                    autocomplete="off"
+                    :value="@old('creator')"></x-text-input>
 
-                        @if ($errors->has('developer'))
-                        <p class="error">{{$errors->first('developer')}}</p>
-                    @endif
+                    @if ($errors->has('creator'))
+                    <p class="error">{{$errors->first('creator')}}</p>
+                @endif
 
                         <textarea
                         name="description"
@@ -55,7 +55,14 @@
                             <option value="rgp">RPG</option>
                         </select>
 
-
+                        <select name="platform" id="platform" field="platform">
+                            <option value="">Select Platform</option>
+                            <option value="PS4">PS4</option>
+                            <option value="PS5">PS5</option>
+                            <option value="PC">PC</option>
+                            <option value="Switch">Swich</option>
+                            <option value="Xbox">Xbox</option>
+                        </select>
 
                         <input
                         type="file"
@@ -66,7 +73,7 @@
                     
 
 
-                    <button class="btn btn-primary mt-6">Save Game</button>
+                    <button type="submit" class="btn btn-primary mt-6">Save Game</button>
                 </form>
             </div>
         </div>
