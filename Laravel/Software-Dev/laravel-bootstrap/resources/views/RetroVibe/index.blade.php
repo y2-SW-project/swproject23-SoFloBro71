@@ -6,50 +6,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"> --}}
 
-{{-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font">
-            {{ __('RetroVibes') }}
-        </h2>
-    </x-slot> --}}
-    @extends('layouts.app')
-
-    @section('content')
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-{{-- 
-            <x-alert-success>
-
-                {{session('success')}}
-
-            </x-alert-success>  --}}
-            
-            <a href="{{ route('RetroVibe.create') }}" class="btn-link btn-lg mb-2">+ New Game</a>
-            @forelse ($Retros as $Retro)
-                <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg flex">
-                    <div>
-                        <h2 class="text">
-                            <a href="{{ route('RetroVibes.show', $Retro) }}">{{ $Retro->title }}</a>
-                            <p>{{ $Retro->developer }}</p>
-                            <p>{{ $Retro->description }}</p>
-                            <p>{{ $Retro->category }}</p>
-                        </h2>
-                        <p class="mt-2">
-                            {{ Str::limit($Retro->text, 200) }}
-                        </p>
-                        <span class="block mt-4 text-sm opacity-70">{{ $Retro->updated_at->diffForHumans() }}</span>
-                    </div>
-                        <img src="{{asset('storage/images/' . $Retro->game_image)}}" width="400" />
-                </div>
-            @empty
-            <p>You have no Games yet.</p>
-            @endforelse
-            {{$Retros->links()}}
-        </div>
-    </div>
-    @endsection
-{{-- </x-app-layout> --}}
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -72,8 +28,11 @@
 
     </head>
     <body>
+
         <nav class="p-3 mb-3 border-bottom primary-font root-gradient text-light">
             <div class="container">
+                {{-- {{$Retros}} --}}
+
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         
                 <h1 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -193,10 +152,11 @@
                 </div>
             </div>
 
+
             @forelse ($Retros as $game)
             <div class="col">
                 <div class="card shadow-lg">
-                    <a href=""><img src="{{ $game->game_image}}" class="card-img-top zoom" alt="..."></a>
+                    <a href="{{route('RetroVibe.show', $game->id)}}"><img src="{{ URL::asset('storage/images/' . $game->game_image)}}" class="card-img-top zoom" alt="..."></a>
                 <div class="card-body">
                     <h3 class="card-title"><a href="#" class="text-decoration-none text-dark">{{ $game->game_title}}</a></h3>
                     <h5 class="text-primary text-opacity-75">{{ $game->category}}</h5>
@@ -345,28 +305,28 @@
 <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
         <div class="card">
-        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <img src="images/inscrytion.png" class="card-img-top" alt="...">
         <div class="card-body">
         </div>
     </div>
     </div>
     <div class="col">
         <div class="card">
-        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <img src="images/cotl-thumbs.png" class="card-img-top" alt="...">
         <div class="card-body">
         </div>
         </div>
     </div>
     <div class="col">
         <div class="card">
-        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <img src="images/dd-games-thumbs.png" class="card-img-top" alt="...">
         <div class="card-body">
         </div>
         </div>
     </div>
     <div class="col">
         <div class="card">
-        <img src="images/purple.jpg" class="card-img-top" alt="...">
+        <img src="images/hh-thumbs.png" class="card-img-top" alt="...">
         <div class="card-body">
         </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -41,28 +42,28 @@ class RetroController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'game_title' => 'required',
-            'description' => 'required|max:500',
-            'category' => 'required',
-            'release_date' => 'required',
-            'platform' => 'required',
-            'developer' => 'required',
-            'game_image' => 'file|image'
-        ]);
+        // $request->validate([
+        //     'game_title' => 'required',
+        //     'description' => 'required|max:500',
+        //     'creator' => 'required',
+        //     'edition' => 'required',
+        //     'release_date' => 'required',
+        //     'platform' => 'required',
+        //     'developer' => 'required',
+        //     'game_image' => 'file|image'
+        // ]);
 
         $Retro_image = $request->file('game_image');
         $extension = $Retro_image->getClientOriginalExtension();
         $filename = date('Y-m-d-His') . '_' . $request->input('game_title') . '.' . $extension;
 
         $path = $Retro_image->storeAs('public/images', $filename);
-
+// dd( $request->input('edition'));
         Game::create([
             // Ensure you have the use statement for 
             // Illuminate\Support\Str at the top of this file.
-            'uuid' => Str::uuid(),
-            'creator_id' => Auth::id(),
-            'edition_id' => $request->input('edition_id'),
+            // 'uuid' => Str::uuid(),
+            'edition' => $request->input('edition'),
             'game_title' => $request->input('game_title'),
             'description' => $request->input('description'),
             'game_image' => $filename,
@@ -88,11 +89,13 @@ class RetroController extends Controller
         // This is OK for web application development, but not for API development as
         // API's return JSON not Views.
 
-        if ($Retro->user_id != Auth::id()) {
-            return abort(403);
-        }
+        // if ($Retro->user_id != Auth::id()) {
+        //     return abort(403);
+        // }
 
-        return view('RetroVibe.show')->with('game', $Retro);
+        
+
+        return view('RetroVibe.show', ['game' => $Retro]);
     }
 
     /**
@@ -101,13 +104,13 @@ class RetroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Game $Retro)
+    public function edit(Game $game)
     {
-        if ($Retro->user_id != Auth::id()) {
+        if ($game->user_id != Auth::id()) {
             return abort(403);
         }
 
-        return view('RetroVibe.edit')->with('game', $Retro);
+        return view('RetroVibe.edit',['game' => $game]);
     }
 
     /**
@@ -128,6 +131,8 @@ class RetroController extends Controller
             'game_title' => 'required',
             'description' => 'required|max:500',
             'category' => 'required',
+            'creator' => 'required',
+            'edition' => 'required',
             'release_date' => 'required',
             'platform' => 'required',
             'developer' => 'required',
@@ -148,9 +153,12 @@ class RetroController extends Controller
             'description' => $request->description,
             'category' => $request->category,
             'game_image' => $filename,
-            'developer' => $request->developer,
+            'edition' => $request->edition,
+            'creator' => $request->creator,
             'platform' => $request->platfrom,
-            'release_date' => $request->release_date
+            'release_date' => $request->release_date,
+            'category' => $request->category,
+
         ]);
 
 

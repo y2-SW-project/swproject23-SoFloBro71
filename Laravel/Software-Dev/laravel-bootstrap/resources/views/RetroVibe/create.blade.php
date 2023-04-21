@@ -66,7 +66,7 @@
                             <option value="rgp">RPG</option>
                         </select>
 
-                        <select name="edition_id" id="edition_id" field="edition_id">
+                        <select name="edition" id="edition" field="edition">
                             <option value="">Select Edition</option>
                             <option value="Collectors">Collectors</option>
                             <option value="Standard">Standard</option>

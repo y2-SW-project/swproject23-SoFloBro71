@@ -75,7 +75,6 @@
                         <option value="PC" {{($Retro->platform === 'PC') ? 'Selected' : ''}}>PC</option>
                         <option value="Switch" {{($Retro->platform === 'Switch') ? 'Selected' : ''}}>Switch</option>
                         <option value="Xbox" {{($Retro->platform === 'Xbox') ? 'Selected' : ''}}>Xbox</option>
-                        <option value="rgp" {{($Retro->platform === 'rpg') ? 'Selected' : ''}}>RPG</option>
                         </select>
 
                         @if ($errors->has('platform'))
